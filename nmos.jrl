@@ -1,0 +1,194 @@
+;;
+;; (journal:on "/home/vishwajeet/Documents/GAA/nmos.jrl")
+;; "/home/vishwajeet/Documents/GAA/nmos.jrl"
+(sdegeo:set-auto-region-naming OFF)
+;; #t
+(bound? 'region_channel1)
+;; #f
+(sdegeo:create-cuboid (position -0.006 -0.02 -0.0025)  (position 0.006 0.02 0.0025) "Silicon" "region_channel1")
+;; #[body 5 1]
+(sdegeo:create-cuboid (position -0.006 -0.02 0.0125)  (position 0.006 0.02 0.0175) "Silicon" "region_channel2")
+;; #[body 6 1]
+(sdegeo:create-cuboid (position -0.006 -0.02 -0.0125)  (position 0.006 0.02 -0.0175) "Silicon" "region_channel3")
+;; #[body 7 1]
+(sde:set-default-material "SiO2")
+;; "Silicon"
+(sdegeo:set-default-boolean "BAB")
+;; "ABA"
+(bound? 'region_oxide1)
+;; #f
+(sdegeo:create-cuboid (position -0.006 -0.021 -0.0035)  (position 0.006 0.021 0.0035) "SiO2" "region_oxide1")
+;; #[body 8 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.007 -0.020 -0.0035)  (position 0.007 0.020 0.0035) "SiO2" "region_oxide1")
+;; #[body 9 1]
+(sde:set-default-material "HfO2")
+;; "SiO2"
+(bound? 'region_hik1)
+;; #f
+(sdegeo:create-cuboid (position -0.009 -0.02 0.0055)  (position 0.009 0.02 -0.0055) "HfO2" "region_hik1")
+;; #[body 10 1]
+(sdegeo:create-cuboid (position -0.007 -0.020 0.0135)  (position 0.007 0.020 0.0185) "SiO2" "region_oxide2")
+;; #[body 11 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.007 -0.020 0.0115)  (position 0.007 0.020 0.0185) "SiO2" "region_oxide2")
+;; #[body 12 1]
+(sdegeo:create-cuboid (position -0.007 -0.020 -0.0115)  (position 0.007 0.020 -0.0185) "SiO2" "region_oxide3")
+;; #[body 13 1]
+(sdegeo:create-cuboid (position -0.009 -0.02 0.0095)  (position 0.009 0.02 -0.0205) "HfO2" "region_hik1")
+;; #[body 14 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.009 -0.02 -0.0095)  (position 0.009 0.02 -0.0205) "HfO2" "region_hik2")
+;; #[body 15 1]
+(sdegeo:create-cuboid (position -0.009 -0.02 0.0095)  (position 0.009 0.02 0.0205) "HfO2" "region_hik3")
+;; #[body 16 1]
+(roll)
+;; -1
+(roll +1)
+;; 1
+(sde:set-default-material "Silicon")
+;; "HfO2"
+(bound? 'region_ext)
+;; #f
+(sdegeo:create-cuboid (position -0.011 -0.02 -0.0025)  (position -0.006 0.02 0.0025) "Silicon" "region_ext")
+;; #[body 17 1]
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll +1)
+;; 1
+(roll +1)
+;; 1
+(bound? 'region_ext1)
+;; #f
+(sdegeo:create-cuboid (position -0.006 -0.02 -0.0025)  (position -0.011 0.002 0.0025) "Silicon" "region_ext1")
+;; #[body 18 1]
+(roll +1)
+;; 0
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.006 -0.02 -0.0025)  (position -0.011 0.002 0.0025) "Silicon" "region_ext1")
+;; #[body 19 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.006 -0.02 -0.0025)  (position -0.011 0.02 0.0025) "Silicon" "region_ext1")
+;; #[body 20 1]
+(sdegeo:create-cuboid (position 0.006 -0.02 -0.0025)  (position 0.011 0.02 0.0025) "Silicon" "region_ext1")
+;; #[body 21 1]
+(sdegeo:create-cuboid (position 0.006 -0.02 -0.0125)  (position 0.011 0.02 0.0175) "Silicon" "region_ext2")
+;; #[body 22 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position 0.006 -0.02 -0.0125)  (position 0.011 0.02 -0.0175) "Silicon" "region_ext1")
+;; #[body 23 1]
+(sdegeo:create-cuboid (position 0.006 -0.02 0.0125)  (position 0.011 0.02 0.0175) "Silicon" "region_ext2")
+;; #[body 24 1]
+(sdegeo:create-cuboid (position -0.006 -0.02 -0.0125)  (position -0.011 0.02 -0.0175) "Silicon" "region_ext3")
+;; #[body 25 1]
+(sdegeo:create-cuboid (position -0.006 -0.02 0.0125)  (position -0.011 0.02 0.0175) "Silicon" "region_ext3")
+;; #[body 26 1]
+(sde:set-default-material "SiO2")
+;; "Silicon"
+(bound? 'region_oxide)
+;; #f
+(sdegeo:create-cuboid (position -0.007 -0.021 -0.0035)  (position 0.007 0.02 0.0035) "SiO2" "region_oxide")
+;; #[body 27 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.007 -0.021 -0.0035)  (position 0.007 0.021 0.0035) "SiO2" "region_oxide")
+;; #[body 28 1]
+(sdegeo:create-cuboid (position -0.009 -0.023 -0.0055)  (position 0.009 0.023 0.0055) "SiO2" "region_oxide2")
+;; #[body 29 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.007 -0.021 -0.0135)  (position 0.007 0.021 -0.0185) "SiO2" "region_oxide")
+;; #[body 30 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.007 -0.021 -0.0115)  (position 0.007 0.021 -0.0185) "SiO2" "region_oxide2")
+;; #[body 31 1]
+(sdegeo:create-cuboid (position -0.007 -0.021 0.0115)  (position 0.007 0.021 0.0185) "SiO2" "region_oxide3")
+;; #[body 32 1]
+(sdegeo:create-cuboid (position -0.009 -0.023 -0.005)  (position 0.009 0.023 0.005) "HfO2" "region_oxide3")
+;; #[body 33 1]
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(roll)
+;; -1
+(bound? 'region_oxide1)
+;; #f
+(sdegeo:create-cuboid (position -0.006 -0.021 -0.0035)  (position 0.006 0.021 0.0035) "SiO2" "region_oxide1")
+;; #[body 34 1]
+(sdegeo:create-cuboid (position -0.006 -0.021 -0.0115)  (position 0.006 0.021 -0.0185) "SiO2" "region_oxide2")
+;; #[body 35 1]
+(sdegeo:create-cuboid (position -0.006 -0.021 0.0115)  (position 0.006 0.021 0.0185) "SiO2" "region_oxide3")
+;; #[body 36 1]
+(sdegeo:create-cuboid (position -0.006 -0.023 0.0095)  (position 0.006 0.023 0.0205) "HfO2" "region_hik")
+;; #[body 37 1]
+(sdegeo:create-cuboid (position -0.006 -0.023 -0.0055)  (position 0.006 0.023 0.0055) "HfO2" "region_hik")
+;; #[body 38 1]
+(sdegeo:create-cuboid (position -0.006 -0.023 -0.0055)  (position 0.006 0.023 0.0055) "HfO2" "region_hik")
+;; #f
+2
+;; 2
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.006 -0.023 -0.0095)  (position 0.006 0.023 0.0205) "HfO2" "region_hik3")
+;; #[body 40 1]
+(roll)
+;; -1
+(sdegeo:create-cuboid (position -0.006 -0.023 0.0095)  (position 0.006 0.023 0.0205) "HfO2" "region_hik3")
+;; #f
+(sdegeo:create-cuboid (position -0.006 -0.023 -0.0095)  (position 0.006 0.023 -0.0205) "HfO2" "region_hik3")
+;; #[body 42 1]
+(sde:set-default-material "TiN")
+;; "SiO2"
+(bound? 'region_gate)
+;; #f
+(sdegeo:create-cuboid (position -0.006 -0.04 -0.0275)  (position 0.006 0.04 0.0275) "TiN" "region_gate")
+;; #[body 43 1]
+(sde:set-default-material "Silicon")
+;; "TiN"
+(bound? 'region_source)
+;; #f
+(sdegeo:create-cuboid (position -0.024 -0.04 -0.0275)  (position -0.011 0.04 0.0275) "Silicon" "region_source")
+;; #[body 44 1]
+(sdegeo:create-cuboid (position 0.024 -0.04 -0.0275)  (position 0.011 0.04 0.0275) "Silicon" "region_drain")
+;; #[body 45 1]
+(sde:set-default-material "Nitride")
+;; "Silicon"
+(bound? 'region_spacer)
+;; #f
+(sdegeo:create-cuboid (position -0.011 -0.04 -0.0275)  (position -0.006 0.04 0.0275) "Nitride" "region_spacer")
+;; #[body 46 1]
+(sdegeo:create-cuboid (position 0.011 -0.04 -0.0275)  (position 0.006 0.04 0.0275) "Nitride" "region_spacer")
+;; #[body 47 1]
+(sde:set-default-material "Silicon")
+;; "Nitride"
+(bound? 'region_body)
+;; #f
+(sdegeo:create-cuboid (position -0.024 -0.04 -0.0275)  (position 0.024 0.04 -0.1275) "Silicon" "region_body")
+;; #[body 48 1]
+;; (journal:off)

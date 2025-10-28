@@ -1,0 +1,203 @@
+* Copyright (c) 1994-2022 Synopsys, Inc.
+* This parameter file and the associated documentation are proprietary
+* to Synopsys, Inc.  This parameter file may only be used in accordance
+* with the terms and conditions of a written license agreement with
+* Synopsys, Inc.  All other use, reproduction, or distribution of this
+* parameter file is strictly prohibited.
+
+
+* SpectralConversion
+* { * Spectral Conversion Model
+*   No default model, user has to define.
+*   All wavelength parameters should be in nanometers.
+*   Choice of Analytic or NumericalTable selected in Physics section of region
+*  
+*   ConversionEfficiency = float     * ratio of absorbed photons that are reemitted.
+*   AbsorptionScaling = float        * scale absorption
+*   EmissionScaling = float          * scale emission
+*   Analytic (
+*     AbsorptionProfile = (
+*        Gaussian(lambda0 sigma peakvalue dc_offset lambda_range0 lambda_range1)
+*        Lorentzian(lambda0 width peakvalue dc_offset lambda_range0 lambda_range1)
+*        ...
+*     )
+*     EmissionProfile = (
+*        Gaussian(lambda0 sigma peakvalue dc_offset lambda_range0 lambda_range1)
+*        Lorentzian(lambda0 width peakvalue dc_offset lambda_range0 lambda_range1)
+*        ...
+*     )
+*   )
+*   NumericalTable (
+*     AbsorptionProfile = (
+*        lambda0 value0
+*        lambda1 value1
+*        ...
+*     )
+*     EmissionProfile = (
+*        lambda0 value0
+*        lambda1 value1
+*        ...
+*     )
+
+*   ConversionEfficiency = 1.0
+* }
+
+
+Kappa
+{ *  Lattice thermal conductivity
+
+  * Formula = 0:
+  * kappa() = 1 / ( 1/kappa + 1/kappa_b * T + 1/kappa_c * T^2 )
+
+  * Formula = 1:
+  * kappa() = kappa + kappa_b * T + kappa_c * T^2 
+
+  Formula = 1
+	kappa	= 0.04	# [W/(K cm)]
+	kappa_b	= 0.0000e+00	# [W/(K^2 cm)]
+	kappa_c	= 0.0000e+00	# [W/(K^3 cm)]
+
+
+  * AllDependent Thermal Conductivity
+	wL_n	= 0.2	# [1]
+	wL_p	= 0.02	# [1]
+	wT_n	= 8	# [1]
+	wT_p	= 6	# [1]
+	wTU_n	= 9.0000e+05	# [1]
+	wTU_p	= 2.0000e+06	# [1]
+	b	= 1.8600e+02	# [1]
+	M_n	= 30.9	# [Da]
+	M_p	= 10.8	# [Da]
+	R_n	= 1.2300e-10	# [m]
+	R_p	= 1.1700e-10	# [m]
+	r_del	= 1	# [1]
+	Ax	= 0.0000e+00	# [s^3]
+	eta	= 1.5000e-10	# [m]
+	Eu_n	= 9	# [eV]
+	Eu_p	= 45	# [eV]
+	ED_n	= 1.33	# [eV]
+	ED_p	= 1.33	# [eV]
+	dLy	= 0.3	# [m]
+	Lb	= 7.1600e-03	# [m]
+	Q_n	= 4	# [1]
+	Q_p	= 15	# [1]
+	Nomg	= 3	# [1]
+	order	= 2	# [1]
+
+      ** NumericalTable (
+      **   Define table for parameters with format below
+      **   N ED_n ED_p b Ax
+      **   If this is defined, parameters ED_n/ED_p/b/Ax defined above are ignored
+      ** ) 
+
+	epsilon	= 11.7	# [F/cm]
+	m_c	= 0.9	# [kg]
+	m_v	= 0.58	# [kg]
+	rho	= 2.3290e+03	# [kg/m^3]
+	BL	= 2.0000e-24	# [s/K^3]
+	BT	= 9.3000e-13	# [1/K^4]
+	BTU	= 5.5000e-18	# [s]
+	omega1	= 2.3570e+13	# [1/s]
+	omega2	= 2.7490e+13	# [1/s]
+	omega3	= 7.4630e+13	# [1/s]
+	omega4	= 4.5820e+13	# [1/s]
+	M_h	= 28	# [Da]
+	R_h	= 1.4600e-10	# [m]
+	V_h	= 1.2100e-05	# [m^3/mol]
+	vL	= 8.4800e+03	# [m/s]
+	vLp	= 4.2400e+03	# [m/s]
+	vT	= 5.8600e+03	# [m/s]
+	vTU	= 2.0000e+03	# [m/s]
+	AI	= 1.3200e-45	# [s^3]
+}
+
+
+Kappa_aniso
+{ *  Lattice thermal conductivity
+
+  * Formula = 0:
+  * kappa() = 1 / ( 1/kappa + 1/kappa_b * T + 1/kappa_c * T^2 )
+
+  * Formula = 1:
+  * kappa() = kappa + kappa_b * T + kappa_c * T^2 
+
+  Formula = 1
+	kappa	= 0.04	# [W/(K cm)]
+	kappa_b	= 0.0000e+00	# [W/(K^2 cm)]
+	kappa_c	= 0.0000e+00	# [W/(K^3 cm)]
+
+
+  * AllDependent Thermal Conductivity
+	wL_n	= 0.2	# [1]
+	wL_p	= 0.02	# [1]
+	wT_n	= 8	# [1]
+	wT_p	= 6	# [1]
+	wTU_n	= 9.0000e+05	# [1]
+	wTU_p	= 2.0000e+06	# [1]
+	b	= 1.8600e+02	# [1]
+	M_n	= 30.9	# [Da]
+	M_p	= 10.8	# [Da]
+	R_n	= 1.2300e-10	# [m]
+	R_p	= 1.1700e-10	# [m]
+	r_del	= 1	# [1]
+	Ax	= 0.0000e+00	# [s^3]
+	eta	= 1.5000e-10	# [m]
+	Eu_n	= 9	# [eV]
+	Eu_p	= 45	# [eV]
+	ED_n	= 1.33	# [eV]
+	ED_p	= 1.33	# [eV]
+	dLy	= 0.3	# [m]
+	Lb	= 7.1600e-03	# [m]
+	Q_n	= 4	# [1]
+	Q_p	= 15	# [1]
+	Nomg	= 3	# [1]
+	order	= 2	# [1]
+
+      ** NumericalTable (
+      **   Define table for parameters with format below
+      **   N ED_n ED_p b Ax
+      **   If this is defined, parameters ED_n/ED_p/b/Ax defined above are ignored
+      ** ) 
+
+	epsilon	= 11.7	# [F/cm]
+	m_c	= 0.9	# [kg]
+	m_v	= 0.58	# [kg]
+	rho	= 2.3290e+03	# [kg/m^3]
+	BL	= 2.0000e-24	# [s/K^3]
+	BT	= 9.3000e-13	# [1/K^4]
+	BTU	= 5.5000e-18	# [s]
+	omega1	= 2.3570e+13	# [1/s]
+	omega2	= 2.7490e+13	# [1/s]
+	omega3	= 7.4630e+13	# [1/s]
+	omega4	= 4.5820e+13	# [1/s]
+	M_h	= 28	# [Da]
+	R_h	= 1.4600e-10	# [m]
+	V_h	= 1.2100e-05	# [m^3/mol]
+	vL	= 8.4800e+03	# [m/s]
+	vLp	= 4.2400e+03	# [m/s]
+	vT	= 5.8600e+03	# [m/s]
+	vTU	= 2.0000e+03	# [m/s]
+	AI	= 1.3200e-45	# [s^3]
+}
+
+Bandgap
+{ * For conductors Band Gap is zero and the following parameters are used:
+	WorkFunction	= 4.66	# [eV]
+	FermiEnergy	= 11.7	# [eV]
+  * for backward compatibility Chi0 could be used to define the work function.
+}
+
+Resistivity
+{ * Resist(T) = Resist0 * ( 1 + TempCoef * ( T - 273 ) + TempCoef2 * ( T - 273 )^2 )
+	Resist0	= 1.1000e-05	# [ohm*cm]
+	TempCoef	= 4.2000e-03	# [1/K]
+	TempCoef2	= 0.0000e+00	# [1/K^2]
+}
+
+Resistivity_aniso
+{ * Resist(T) = Resist0 * ( 1 + TempCoef * ( T - 273 ) + TempCoef2 * ( T - 273 )^2 )
+	Resist0	= 1.1000e-05	# [ohm*cm]
+	TempCoef	= 4.2000e-03	# [1/K]
+	TempCoef2	= 0.0000e+00	# [1/K^2]
+}
+
